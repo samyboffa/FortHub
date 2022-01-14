@@ -8,9 +8,10 @@ const initialState = {
 export const todaysItems = (state = initialState, action) => {
   switch (action.type) {
     case "ITEMS_LOADING":
-      return { ...state, loading: false };
+      return { ...state, loading: true };
     case "FETCH_ITEMS":
-      return { ...state, loading: false };
+      let items = [];
+      return { ...state, items: action.payload, loading: false };
     case "ITEMS_ERROR":
       return { ...state, loading: false };
     default:
